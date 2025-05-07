@@ -87,6 +87,39 @@
 
     <script type="text/babel">
 
+        const rootElement = document.getElementById("root");
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<App />)
+
+        function App() {
+            return (
+               <React.Fragment>
+                <Post name="Sigma Guy" content="Starting to think i'm an omega..." />
+                <Post name="sicko mode" content="listening to linkin park" />
+                <Post name="chud" content="it's so over" />
+                </React.Fragment>
+            );
+        }
+        
+        function Post({name, content}) {
+            return (
+                <div className="post"> 
+                    <div className="post-header">
+                    <i className="fas fa-user-circle"></i>
+                    <span className="username">{name}</span>
+                </div>
+                    <div className="post-content">
+                        <p>{content}</p>
+                        </div>
+                    <div className="post-actions">
+                        <button className="like-button liked">
+                            <i className="fas fa-heart"></i>
+                            </button>
+                        </div>
+                 </div>
+            );
+        }
+
     </script>
 
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
